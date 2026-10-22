@@ -1,7 +1,7 @@
 <div align="center">
 <img src="frontend/assets/medical-nlp-sidebar-logo.png" width="260" alt="Medical NLP logo" />
 
-# Medical Terminology Standardization Platform & feishu
+# Medical Terminology Standardization& feishu
 
 **在飞书聊天中提交英文临床文本，获得医学缩写扩写与标准概念映射。**
 
@@ -38,9 +38,9 @@ Web 工作台继续提供单句分析、Benchmark、错误归因和候选词典�
 | --- | --- | --- |
 | `The patient has SOB and CP.` | `shortness of breath`、`chest pain` | 根据实际检索与校验结果返回概念详情，或明确显示暂不编码等状态 |
 
-以上是功能示意，不是本版本飞书完整分析的实测结果。实际输出取决于语境、模型服务及术语库。
+以下演示截图展示了所用示例的实际回复；其他文本的输出仍取决于语境、模型服务及术语库。
 
-## 效果展示与截图位置
+## 效果展示
 
 原平台的 Web 截图：
 
@@ -51,28 +51,22 @@ Web 工作台继续提供单句分析、Benchmark、错误归因和候选词典�
   </tr>
 </table>
 
-下面为新飞书功能预留图片。将真实截图保存到标注路径，再取消对应图片行的 HTML 注释即可显示。详见 [截图说明](docs/images/feishu/README.md)。
+### 飞书机器人演示
 
-### 截图 01：飞书单聊帮助
+三张截图依次展示单聊帮助、群聊 @ 分析和单聊英文文本分析。点击图片可查看原图。
 
-> **【待补截图 01】** 展示发送“帮助”以及机器人的完整回复。文件：`docs/images/feishu/01-private-help.png`。
-
-
- ![飞书单聊帮助](docs/images/feishu/01-private-help.png) 
-
-### 截图 02：群聊真正 @ 机器人
-
-> **【待补截图 02】** 展示普通消息与真正 @ 机器人的区别，以及 @ 后的帮助回复。文件：`docs/images/feishu/02-group-mention.png`。
-
-![飞书群聊真正 @ 机器人](docs/images/feishu/02-group-mention.png) 
-
-### 截图 03：英文病例片段与分析结果
-
-> **【待补截图 03｜完整分析验收后补充】** 使用虚构英文文本，展示输入、扩写文本与逐项标准化结果；可用长截图保留完整上下文。文件：`docs/images/feishu/03-analysis-result.png`。
-
-![英文文本分析与标准化结果](docs/images/feishu/03-analysis-result.png) 
-
-
+<table>
+  <tr>
+    <th width="33%">单聊帮助</th>
+    <th width="33%">群聊 @ 分析</th>
+    <th width="33%">英文文本分析结果</th>
+  </tr>
+  <tr>
+    <td width="33%" valign="top"><a href="docs/images/feishu/01-private-help.png"><img src="docs/images/feishu/01-private-help.png" width="100%" alt="飞书单聊帮助说明" /></a></td>
+    <td width="33%" valign="top"><a href="docs/images/feishu/02-group-mention.png"><img src="docs/images/feishu/02-group-mention.png" width="100%" alt="群聊真正 @ 机器人并返回分析结果" /></a></td>
+    <td width="33%" valign="top"><a href="docs/images/feishu/03-analysis-result.png"><img src="docs/images/feishu/03-analysis-result.png" width="100%" alt="单聊英文文本扩写与标准术语结果" /></a></td>
+  </tr>
+</table>
 
 ## 核心能力
 
@@ -205,7 +199,7 @@ Copy-Item integrations/feishu/.env.example integrations/feishu/.env
 | 飞书接入逻辑 | 离线测试覆盖校验、去重、队列、状态和错误处理，详见 [离线验证记录](integrations/feishu/OFFLINE_VERIFICATION.md) |
 | SDK 兼容性 | SDK 1.7.5 构建与序列化的离线检查；不替代真实权限验证 |
 | 单聊 / 群聊帮助 | 已有操作者提供的成功回复截图；群聊截图显示真正 @ 后回复 |
-| 英文文本完整分析 | 尚未记录该飞书版本完整端到端验收，待补截图 03 |
+| 英文文本完整分析 | 已补充单聊及群聊英文示例的分析回复截图；这些示例不代表全面验收或医学准确率评估 |
 | 医学准确率 | 原 V11 的评估不能直接视为飞书版准确率；本版未新增准确率承诺 |
 
 运行帮助成功只证明相应消息通路可用，不代表医学模型、术语库和标准化链路已完成验收。现有 GitHub Actions 工作流检查后端默认测试，飞书离线测试通过上方命令单独运行。
@@ -224,7 +218,7 @@ Copy-Item integrations/feishu/.env.example integrations/feishu/.env
 ├─ integrations/feishu/  # SDK 入口、配置、事件校验、任务队列、回复与测试
 ├─ backend/             # 医学 API、缩写扩写、概念映射、评估与测试
 ├─ frontend/            # Web 分析和评估工作台
-├─ docs/images/feishu/  # 飞书演示截图占位说明
+├─ docs/images/feishu/  # 飞书演示截图
 ├─ docs/                # 架构设计、实施方案、操作指南
 ├─ examples/benchmarks/ # 示例评估输入
 ├─ Dockerfile
@@ -237,7 +231,8 @@ Copy-Item integrations/feishu/.env.example integrations/feishu/.env
 
 仓库包含源码、配置模板和演示数据；不包含真实 `.env`、飞书身份配置、任务状态库、运行日志、完整术语库、模型权重或本机虚拟环境。任务正文在本地 SQLite 中临时保存，清理策略详见接入手册；后端自身日志也需按使用环境管理。
 
-- [ ] 完成飞书英文文本端到端验收并补充真实截图。
+- [x] 补充飞书单聊、群聊和英文文本分析演示截图。
+- [ ] 扩充异常场景与更多英文文本的端到端验收。
 - [ ] 增加更清晰的消息卡片呈现与人工复核入口。
 - [ ] 评估服务器部署、监控与更高并发的需求。
 - [ ] 将全医学实体识别、文件处理和连续追问作为独立扩展设计。
