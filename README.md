@@ -1,5 +1,4 @@
 <div align="center">
-
 <img src="frontend/assets/medical-nlp-sidebar-logo.png" width="260" alt="Medical NLP logo" />
 
 # Medical Terminology Standardization Platform & feishu
@@ -58,26 +57,22 @@ Web 工作台继续提供单句分析、Benchmark、错误归因和候选词典�
 
 > **【待补截图 01】** 展示发送“帮助”以及机器人的完整回复。文件：`docs/images/feishu/01-private-help.png`。
 
-<!-- 上传图片后取消下一行的注释 -->
-<!-- ![飞书单聊帮助](docs/images/feishu/01-private-help.png) -->
+
+ ![飞书单聊帮助](docs/images/feishu/01-private-help.png) 
 
 ### 截图 02：群聊真正 @ 机器人
 
 > **【待补截图 02】** 展示普通消息与真正 @ 机器人的区别，以及 @ 后的帮助回复。文件：`docs/images/feishu/02-group-mention.png`。
 
-<!-- ![飞书群聊真正 @ 机器人](docs/images/feishu/02-group-mention.png) -->
+![飞书群聊真正 @ 机器人](docs/images/feishu/02-group-mention.png) 
 
 ### 截图 03：英文病例片段与分析结果
 
 > **【待补截图 03｜完整分析验收后补充】** 使用虚构英文文本，展示输入、扩写文本与逐项标准化结果；可用长截图保留完整上下文。文件：`docs/images/feishu/03-analysis-result.png`。
 
-<!-- ![英文文本分析与标准化结果](docs/images/feishu/03-analysis-result.png) -->
+![英文文本分析与标准化结果](docs/images/feishu/03-analysis-result.png) 
 
-### 截图 04：不确定结果或异常提示
 
-> **【待补截图 04｜可选】** 展示真实出现的 `WITHHELD` 或超时等提示，说明系统如何保留不确定性。文件：`docs/images/feishu/04-status-example.png`。
-
-<!-- ![不确定结果与异常提示](docs/images/feishu/04-status-example.png) -->
 
 ## 核心能力
 
